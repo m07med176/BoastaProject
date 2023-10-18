@@ -10,8 +10,7 @@ import org.mockito.Mockito.nullable
 import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
 import retrofit2.Response
-import tech.bosta.bostatask.domain.entities.AlbumResponseItem
-import tech.bosta.bostatask.domain.entities.PhotoResponseItem
+import tech.bosta.bostatask.domain.entities.PhotoResponse
 import tech.bosta.bostatask.domain.entities.UsersResponse
 import tech.bosta.bostatask.domain.repository.IRepository
 import tech.bosta.bostatask.domain.utils.NetworkResponseState
@@ -33,7 +32,7 @@ class GetPhotosCaseTest{
     fun `get Albums successfully`()  = runBlocking{
         // Given
         val albumId = 2
-        val expectedUserResponse = Response.success(PhotoResponseItem(
+        val expectedUserResponse = Response.success(PhotoResponse(
             albumId = albumId,
             id = 5,
             thumbnailUrl = "",

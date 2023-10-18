@@ -1,4 +1,4 @@
-package tech.bosta.bostatask.presentation.ui.albumsscreen
+package tech.bosta.bostatask.presentation.ui.profileScreen
 
 import android.util.Log
 import androidx.lifecycle.viewModelScope
@@ -20,10 +20,10 @@ import tech.bosta.bostatask.presentation.utils.ViewModelMVI
 
 
 @HiltViewModel
-class AlbumsScreenViewModel @Inject constructor(
+class ProfileViewModel @Inject constructor(
     private val getUsersCase: GetUsersCase,
     private val getAlbumsCase: GetAlbumsCase
-) : ViewModelMVI<AlbumsEventUI>() {
+) : ViewModelMVI<ProfileEventUI>() {
 
     private  val TAG =this::class.java.name
 
@@ -34,12 +34,12 @@ class AlbumsScreenViewModel @Inject constructor(
     val stateAlbums: StateFlow<UIScreenState<AlbumResponse>?> = _stateAlbums.asStateFlow()
 
 
-    override fun onEvent(event: AlbumsEventUI) {
+    override fun onEvent(event: ProfileEventUI) {
         val exception = CoroutineExceptionHandler{_,throwable->
             Log.d(TAG, "Error Happend: ${throwable.message}")
         }
         when(event){
-            is AlbumsEventUI.RequestAlbums -> {
+            is ProfileEventUI.RequestProfile -> {
                 viewModelScope.launch(exception){
                     getAlbumsCase(event.userId).collect{state->
                         when(state){
@@ -59,7 +59,7 @@ class AlbumsScreenViewModel @Inject constructor(
                     }
                 }
             }
-            is AlbumsEventUI.RequestRandomUser -> {
+            is ProfileEventUI.RequestRandomUser -> {
                 viewModelScope.launch(exception){
                     getUsersCase().collect{state->
                         when(state){
@@ -74,7 +74,7 @@ class AlbumsScreenViewModel @Inject constructor(
                             }
                             is NetworkResponseState.OnSuccess ->  _stateUser.update {
                                 val user = state.data?.random()
-                                user?.id?.let { id-> onEvent(AlbumsEventUI.RequestAlbums(id)) }
+                                user?.id?.let { id-> onEvent(ProfileEventUI.RequestProfile(id)) }
                                 it?.copy(error = null,loading = false, data = user)
                             }
                         }

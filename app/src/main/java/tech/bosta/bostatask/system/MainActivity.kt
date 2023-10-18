@@ -1,21 +1,25 @@
 package tech.bosta.bostatask.system
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import tech.bosta.bostatask.presentation.theme.BostaTaskTheme
-import tech.bosta.bostatask.presentation.ui.albumsscreen.AlbumsScreenScreen
+import tech.bosta.bostatask.presentation.ui.album.AppNavigation
+import tech.bosta.bostatask.presentation.ui.profileScreen.ProfileScreen
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalAnimationApi::class)
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -24,7 +28,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    AlbumsScreenScreen()
+                    val navController = rememberNavController()
+                    AppNavigation(navController = navController)
                 }
             }
         }

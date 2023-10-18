@@ -7,8 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 import tech.bosta.bostatask.domain.entities.AlbumResponse
-import tech.bosta.bostatask.domain.entities.AlbumResponseItem
-import tech.bosta.bostatask.domain.entities.PhotoResponseItem
+import tech.bosta.bostatask.domain.entities.PhotoResponse
 import tech.bosta.bostatask.domain.entities.UsersResponse
 
 interface CallApi {
@@ -24,7 +23,7 @@ interface CallApi {
     @GET(Urls.Photos)
     suspend fun getPhotos(
         @Path("albumId") albumId:Int
-    ):Response<PhotoResponseItem>
+    ):Response<PhotoResponse>
 
 
 }
