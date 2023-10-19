@@ -61,6 +61,7 @@ dependencies {
     implementation(libs.ui.graphics)
     debugImplementation(libs.ui.tooling)
     implementation(libs.activity.compose)
+    implementation(libs.navigation.compose)
     implementation(libs.ui.tooling.preview)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(platform(libs.compose.bom))

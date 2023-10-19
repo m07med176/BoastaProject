@@ -25,8 +25,8 @@ class AlbumViewModel @Inject constructor(val photosCase: GetPhotosCase) : ViewMo
     val statePhotos: StateFlow<UIScreenState<PhotoResponse>?> = _statePhotos.asStateFlow()
 
     override fun onEvent(event: AlbumsEventUI) {
-        val exception = CoroutineExceptionHandler{_,throwable->
-            Log.d(TAG, "Error Happend: ${throwable.message}")
+        val exception = CoroutineExceptionHandler{ _ ,throwable->
+            Log.d(TAG, "Error Happened: ${throwable.message}")
         }
         when(event){
             is AlbumsEventUI.RequestPhotos -> {
@@ -51,6 +51,4 @@ class AlbumViewModel @Inject constructor(val photosCase: GetPhotosCase) : ViewMo
             }
         }
     }
-
-
 }

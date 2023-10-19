@@ -27,7 +27,7 @@ fun AppNavigation(
         composable(
             route = NavigationGraph.AlbumsScreen.route+"/{albumId}",
         ) {
-            val albumId = it.arguments?.getInt("albumId") ?: -1
+            val albumId = it.arguments?.getString("albumId")?.toInt()  ?: -1
             AlbumScreen(navController,albumId)
         }
 
