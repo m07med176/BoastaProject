@@ -30,9 +30,8 @@ core-ktx-version  = "1.5.0"
 junit-ktx-version  = "1.1.5"
 core-testing-version  = "2.2.0"
 mockitoInlineVersion = "5.2.0"
-navigation-compose-version = "2.7.1"
-
-
+navigation-compose = "2.7.4"
+lottie_compose_version = "4.0.0"
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 
@@ -45,6 +44,8 @@ ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
 
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation-compose"}
+ui-lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie_compose_version" }
 
 # Testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -72,6 +73,8 @@ test-coroutineTest = {group =  "org.jetbrains.kotlinx", name = "kotlinx-coroutin
 #https://truth.dev
 test-googleTruth = {group =  "com.google.truth", name = "truth", version.ref = "googleTruthVersion" }
 
+# Navigation
+test-navigation-compose  = { group ="androidx.navigation", name = "navigation-testing", version.ref = "navigation-compose" }
 
 test-core_ktx_test = { group =  "androidx.test", name = "core-ktx", version.ref = "core-ktx-version" }
 test-junit_ktx_test= { group =  "androidx.test.ext", name = "junit-ktx", version.ref = "junit-ktx-version" }
@@ -106,11 +109,9 @@ accompanist_pager = {  group = "com.google.accompanist",name = "accompanist-page
 accompanist-insets = {  group = "com.google.accompanist",name = "accompanist-insets",version.ref = "accompanistInsetsVersion"}
 
 #// UI Components
-#implementation ("androidx.appcompat:appcompat:1.6.1")
 #implementation ("com.google.android.material:material:1.9.0")
 #implementation ("androidx.compose.material:material:1.5.0")
-#implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
-navigation-compose = { group = "androidx.navigation",name = "navigation-compose",version.ref = "navigation-compose-version"}
+
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }

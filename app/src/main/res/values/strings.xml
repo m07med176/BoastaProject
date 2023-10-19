@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BostaTask</string>
+    <string name="my_albums">My Albums</string>
+    <string name="there_is_no_data">There is no data</string>
+    <string name="still_fetch_data">Still fetch data ..</string>
+    <string name="search_in_images">Search in images..</string>
+    <string name="profile">Profile</string>
 </resources>

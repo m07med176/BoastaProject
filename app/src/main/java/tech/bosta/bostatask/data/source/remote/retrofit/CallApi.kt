@@ -22,7 +22,7 @@ interface CallApi {
 
     @GET(Urls.Photos)
     suspend fun getPhotos(
-        @Path("albumId") albumId:Int
+        @Query("albumId") albumId:Int
     ):Response<PhotoResponse>
 
 
