@@ -61,7 +61,9 @@ dependencies {
     implementation(libs.ui.graphics)
     debugImplementation(libs.ui.tooling)
     implementation(libs.activity.compose)
+    implementation(libs.ui.lottie.compose)
     implementation(libs.ui.tooling.preview)
+    implementation(libs.navigation.compose)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(platform(libs.compose.bom))
     androidTestImplementation(libs.espresso.core)
@@ -83,10 +85,12 @@ dependencies {
     testImplementation(libs.test.junit.ktx.test)
     testImplementation(libs.test.mockitoAndroid)
     testImplementation(libs.test.hamcrest.library)
+    implementation("androidx.work:work-runtime-ktx:2.7.1")
 
     // Android Test
     androidTestImplementation(libs.ui.test.junit4)
     androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.test.navigation.compose)
 
     // Dagger Hilt
     kapt(libs.hilt.compiler)

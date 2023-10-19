@@ -36,7 +36,7 @@ class ProfileViewModel @Inject constructor(
 
     override fun onEvent(event: ProfileEventUI) {
         val exception = CoroutineExceptionHandler{_,throwable->
-            Log.d(TAG, "Error Happend: ${throwable.message}")
+            Log.d(TAG, "Error Happened: ${throwable.message}")
         }
         when(event){
             is ProfileEventUI.RequestProfile -> {

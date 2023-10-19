@@ -60,7 +60,7 @@ class CallApiTest {
     fun `Given UserId and AlbumId When call getPhotos Then return Item of photos`() = runBlocking {
         // Given
         val userId = callApi.getUsers().body()?.random()?.id
-        val albumId = userId?.let{callApi.getAlbums(it).body()?.id}
+        val albumId = userId?.let{callApi.getAlbums(it).body()?.random()?.id}
 
         // When
         val result = albumId?.let{callApi.getPhotos(it)}

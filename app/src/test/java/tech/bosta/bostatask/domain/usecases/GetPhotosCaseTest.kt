@@ -32,13 +32,7 @@ class GetPhotosCaseTest{
     fun `get Albums successfully`()  = runBlocking{
         // Given
         val albumId = 2
-        val expectedUserResponse = Response.success(PhotoResponse(
-            albumId = albumId,
-            id = 5,
-            thumbnailUrl = "",
-            title = "",
-            url = ""
-        ))
+        val expectedUserResponse = Response.success(PhotoResponse())
 
         // When
         `when`(repository.getPhotos(albumId)).thenReturn(expectedUserResponse)
