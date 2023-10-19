@@ -13,7 +13,7 @@ search query.
 <hr>
 
 
-<a href="#"><img alt="Get it on Google Play" src="https://github.com/m07med176/Weather-App-Technical-Task/blob/master/screenshots/record.gif" width=50% align="center"/></a>
+<a href="#"><img alt="Get it on Google Play" src="https://github.com/m07med176/BoastaProject/blob/master/screenshots/shots.gif" width=50% align="center"/></a>
 
 <hr>
 
