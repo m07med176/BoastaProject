@@ -33,11 +33,6 @@ Tools That I used:
 ```
 
 <hr>
-<h2>Developer:</h2>
-
-- Mohamed Arafa [linkedin](https://www.linkedin.com/in/devmohamed/)
-
-<hr>
 
 
 <p align="center">
@@ -53,6 +48,11 @@ Tools That I used:
   <img alt="Dark" src="https://github.com/m07med176/BoastaProject/blob/master/screenshots/4.jpg" width="45%">
 </p>
 
+
+<hr>
+<h2>Developer:</h2>
+
+- Mohamed Arafa [linkedin](https://www.linkedin.com/in/devmohamed/)
 
 
 
