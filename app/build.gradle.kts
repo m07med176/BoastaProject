@@ -56,6 +56,9 @@ android {
 dependencies {
 
     implementation(libs.ui)
+    implementation("com.squareup.picasso:picasso:2.8")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
     implementation(libs.core.ktx)
     implementation(libs.material3)
     implementation(libs.ui.graphics)

@@ -70,10 +70,10 @@ fun AlbumScreen(
         delay(1000)
         viewModel.onEvent(AlbumsEventUI.RequestPhotos(albumId))
     }
+
     var showDialog by remember { mutableStateOf(false to "") }
-
-
     val photos = viewModel.statePhotos.collectAsState().value
+
     Column(
         modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -132,17 +132,13 @@ fun AlbumScreen(
 
     }
 
-
-
-
-    // Dialog of image
     if (showDialog.first) {
         Dialog(
-            onDismissRequest = { showDialog.copy(false) }
+            onDismissRequest = { showDialog = showDialog.copy(first = false ) }
         ) {
             ImageViewer(
                 imageUrl = showDialog.second,
-                onDismiss = { showDialog.copy(false)  }
+                onDismiss = { showDialog = showDialog.copy(first = false)  }
             )
         }
     }

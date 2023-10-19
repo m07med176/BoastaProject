@@ -41,8 +41,8 @@ class AlbumViewModel @Inject constructor(val photosCase: GetPhotosCase) : ViewMo
                         if (event.title.isBlank()){
                             it?.copy(data = photosData)
                         }else{
-                            val result =  it?.data?.filter {result-> event.title.lowercase().startsWith(result.title.lowercase()) } as ArrayList
-                            it.copy(data = result)
+                            val result =  photosData.filter {result-> result.title.lowercase().startsWith(event.title.lowercase()) }
+                            it?.copy(data = ArrayList(result?: emptyList()))
                         }
                     }
                 }
