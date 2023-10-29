@@ -1,4 +1,4 @@
-# Bosta Technical Task for Android Developer Position 
+# Bosta Simple Application
 
 <h2>Simple Application</h2>
 The app is composed of 2 screens, first is the profile screen, it has the user name and address
